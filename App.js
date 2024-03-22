@@ -1,5 +1,12 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import MaterialIcon from "react-native-vector-icons"
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+// import { MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function App() {
   return (
@@ -7,10 +14,9 @@ export default function App() {
       <Text style={{ fontWeight: "bold", fontSize: 30, color: "#20315f" }}>
         GAMEON
       </Text>
-      <TouchableOpacity>
-        <Text>Let's begin</Text>
-        {/* <MaterialIcon name='NavigateNextIcon' /> */}
-
+      <TouchableOpacity style={styles.touchable}>
+        <Text style={{ color: "black", fontSize:17 , fontWeight:"400"}}>Let's begin</Text>
+        <AntDesign name="right" size={24} color="white" />
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -22,5 +28,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  touchable: {
+    backgroundColor: "#AD40AF",
+    padding: 18,
+    margin: 50,
+    width: "80%",
+   flexDirection: "row",
+    justifyContent: "space-between",
+    borderRadius:7,
+    height:60,
   },
 });
