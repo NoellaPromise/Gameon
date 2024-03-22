@@ -11,11 +11,11 @@ import { AntDesign } from "@expo/vector-icons";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={{ fontWeight: "bold", fontSize: 30, color: "#20315f" }}>
+      <Text style={{ fontWeight: "bold", fontSize: 30, color: "#20315f"}}>
         GAMEON
       </Text>
       <TouchableOpacity style={styles.touchable}>
-        <Text style={{ color: "black", fontSize:17 , fontWeight:"400"}}>Let's begin</Text>
+        <Text style={{ color: "white", fontSize:17 , fontWeight:"400"}}>Let's begin</Text>
         <AntDesign name="right" size={24} color="white" />
       </TouchableOpacity>
     </SafeAreaView>
