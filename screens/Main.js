@@ -23,7 +23,7 @@ const Main = ({ navigation }) => {
       </Text>
       <View>
         <Image
-          source={require("../assets/game1.png")}
+          source={require("../assets/images/game1.png")}
           style={{ width: 300, height: 300 }}
         />
       </View>
