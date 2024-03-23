@@ -1,48 +1,19 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
- Image,
-} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./components/Home";
+import Main from "./components/Main";
 
-import { AntDesign } from "@expo/vector-icons";
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={{ fontWeight: "bold", fontSize: 30, color: "#20315f", marginBottom:80}}>
-        GAMEON
-      </Text>
-      <View>
-        <Image source={require('./assets/game1.png')} style={{width:300, height:300}}/>
-      </View>
-      <TouchableOpacity style={styles.touchable}>
-     
-        <Text style={{ color: "white", fontSize:17 , fontWeight:"400"}}>Let's begin</Text>
-        <AntDesign name="right" size={24} color="white" />
-      </TouchableOpacity>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen component={Main} name="Main" options={{headerShown:false}} />
+        <Stack.Screen component={Home} name="Home" />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  touchable: {
-    backgroundColor: "#AD40AF",
-    padding: 18,
-    margin: 50,
-    width: "80%",
-   flexDirection: "row",
-    justifyContent: "space-between",
-    borderRadius:7,
-    height:60,
-    marginTop:100,
-  },
-});
+export default App;
