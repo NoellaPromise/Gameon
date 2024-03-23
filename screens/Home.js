@@ -1,10 +1,23 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { SafeAreaView, Image,ScrollView,TextInput  } from "react-native";
-import { EvilIcons } from '@expo/vector-icons';
-
+import {
+  SafeAreaView,
+  Image,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import { EvilIcons } from "@expo/vector-icons";
+import Carousel from "react-native-snap-carousel";
+import { sliderData } from "../model/data";
+import BannerSlider from "../components/BannerSlider";
+import { windowWidth } from "../utils/Dimensions";
 
 const Home = () => {
+  const renderBanner =({item,index})=>{
+
+return <BannerSlider  data={item}/>
+  }
   return (
     <SafeAreaView>
       <ScrollView>
@@ -21,11 +34,51 @@ const Home = () => {
             style={{ width: 50, height: 50, borderRadius: 50 }}
           />
         </View>
-<View style={{flexDirection:"row", paddingHorizontal:10, paddingVertical:8, borderColor:'#C6C6C6',borderWidth:2,borderRadius:8,marginHorizontal:20}}>
-<EvilIcons name="search" size={25} color="#c6c6c6" style={{marginTop:5}}/>
-<TextInput placeholder="Search" />
-</View>
-        
+        <View
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: 10,
+            paddingVertical: 8,
+            borderColor: "#C6C6C6",
+            borderWidth: 2,
+            borderRadius: 8,
+            marginHorizontal: 20,
+          }}
+        >
+          <EvilIcons
+            name="search"
+            size={25}
+            color="#c6c6c6"
+            style={{ marginTop: 5 }}
+          />
+          <TextInput placeholder="Search" />
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingHorizontal: 17,
+            paddingTop: 20,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", fontSize: 17, paddingBottom:20 }}>
+            Upcoming Games
+          </Text>
+          <TouchableOpacity>
+            <Text style={{ color: "#0aada8" }}>See all</Text>
+          </TouchableOpacity>
+        </View>
+        <Carousel
+          ref={(c) => {
+            this._carousel = c;
+          }}
+          data={sliderData}
+          renderItem={renderBanner}
+          sliderWidth={windowWidth-40}
+          itemWidth={300}
+          loop={true}
+         
+        />
       </ScrollView>
     </SafeAreaView>
   );
