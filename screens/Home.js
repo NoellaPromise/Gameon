@@ -13,6 +13,7 @@ import { sliderData } from "../model/data";
 import BannerSlider from "../components/BannerSlider";
 import { windowWidth } from "../utils/Dimensions";
 import CustomSwitch from "../components/CustomSwitch";
+import ListItem from "../components/ListItem";
 
 const Home = () => {
   const[gamesTab,setGamesTab] = useState(1)
@@ -83,7 +84,7 @@ setGamesTab(value);
           itemWidth={300}
           loop={true}
         />
-        <View>
+        <View >
           <CustomSwitch
             SelectionMode={1}
             option1="Free to play"
@@ -91,7 +92,7 @@ setGamesTab(value);
             onSelectionSwitch={onSelectionSwitch}
           />
         </View>
-        {gamesTab==1 && <Text>Free Games</Text> }
+        {gamesTab==1 && <ListItem/> }
         {gamesTab==2 && <Text>Paid Games</Text> }
       </ScrollView>
     </SafeAreaView>

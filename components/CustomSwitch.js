@@ -16,8 +16,7 @@ const CustomSwitch = ({
   return (
     <View
       style={{
-        height: 50,
-        // width:'100%',
+        width: "100%",
         // backgroundColor: "#e4e4e4",
         borderRadius: 10,
         borderColor: "#AD40AF",
@@ -27,7 +26,9 @@ const CustomSwitch = ({
         borderColor: "#AD40AF",
         flexDirection: "row",
         justifyContent: "center",
-        marginHorizontal: 20,
+
+        marginTop: 20,
+        height: 50,
       }}
     >
       <TouchableOpacity
@@ -62,7 +63,8 @@ const CustomSwitch = ({
           borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
-          // margin:4,
+          width: 100,
+
           padding: 7,
         }}
       >
