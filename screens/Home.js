@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   Image,
@@ -12,11 +12,16 @@ import Carousel from "react-native-snap-carousel";
 import { sliderData } from "../model/data";
 import BannerSlider from "../components/BannerSlider";
 import { windowWidth } from "../utils/Dimensions";
+import CustomSwitch from "../components/CustomSwitch";
 
 const Home = () => {
-  const renderBanner =({item,index})=>{
+  const[gamesTab,setGamesTab] = useState(1)
+  const renderBanner = ({ item, index }) => {
+    return <BannerSlider data={item} />;
+  };
 
-return <BannerSlider  data={item}/>
+  const onSelectionSwitch = (value) => { 
+setGamesTab(value);
   }
   return (
     <SafeAreaView>
@@ -61,7 +66,7 @@ return <BannerSlider  data={item}/>
             paddingTop: 20,
           }}
         >
-          <Text style={{ fontWeight: "bold", fontSize: 17, paddingBottom:20 }}>
+          <Text style={{ fontWeight: "bold", fontSize: 17, paddingBottom: 20 }}>
             Upcoming Games
           </Text>
           <TouchableOpacity>
@@ -74,11 +79,20 @@ return <BannerSlider  data={item}/>
           }}
           data={sliderData}
           renderItem={renderBanner}
-          sliderWidth={windowWidth-40}
+          sliderWidth={windowWidth - 40}
           itemWidth={300}
           loop={true}
-         
         />
+        <View>
+          <CustomSwitch
+            SelectionMode={1}
+            option1="Free to play"
+            option2="Paid games"
+            onSelectionSwitch={onSelectionSwitch}
+          />
+        </View>
+        {gamesTab==1 && <Text>Free Games</Text> }
+        {gamesTab==2 && <Text>Paid Games</Text> }
       </ScrollView>
     </SafeAreaView>
   );
