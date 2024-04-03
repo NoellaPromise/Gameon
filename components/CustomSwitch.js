@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React , { useState } from "react";
+import React, { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const CustomSwitch = ({
@@ -16,13 +16,18 @@ const CustomSwitch = ({
   return (
     <View
       style={{
-        height: 44,
-        width: "100%",
-        backgroundColor: "#e4e4e4",
+        height: 50,
+        // width:'100%',
+        // backgroundColor: "#e4e4e4",
+        borderRadius: 10,
+        borderColor: "#AD40AF",
+        flexDirection: "row",
+        // backgroundColor: "#e4e4e4",
         borderRadius: 10,
         borderColor: "#AD40AF",
         flexDirection: "row",
         justifyContent: "center",
+        marginHorizontal: 20,
       }}
     >
       <TouchableOpacity
@@ -34,6 +39,8 @@ const CustomSwitch = ({
           borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
+          //   margin:4,
+          padding: 7,
         }}
       >
         <Text
@@ -55,6 +62,8 @@ const CustomSwitch = ({
           borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
+          // margin:4,
+          padding: 7,
         }}
       >
         <Text
