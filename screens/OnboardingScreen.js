@@ -28,7 +28,7 @@ const OnboardingScreen = ({ navigation }) => {
         />
       </View>
       <TouchableOpacity
-        onPress={()=>navigation.navigate("Home")}
+        onPress={()=>navigation.navigate("Login")}
         style={styles.touchable}
       >
         <Text style={{ color: "white", fontSize: 17, fontWeight: "400" }}>
