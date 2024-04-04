@@ -111,6 +111,7 @@ const Home = () => {
               title={item.title}
               subTitle={item.subtitle}
               isFree={item.isFree}
+              price ={item.price}
               
             />
           ))}
