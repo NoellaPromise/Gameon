@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { EvilIcons } from "@expo/vector-icons";
 import Carousel from "react-native-snap-carousel";
-import { sliderData } from "../model/data";
+import { freeGames, sliderData } from "../model/data";
 import BannerSlider from "../components/BannerSlider";
 import { windowWidth } from "../utils/Dimensions";
 import CustomSwitch from "../components/CustomSwitch";
@@ -92,7 +92,8 @@ setGamesTab(value);
             onSelectionSwitch={onSelectionSwitch}
           />
         </View>
-        {gamesTab==1 && <ListItem/> }
+        {gamesTab==1 && 
+        freeGames.map(item=> <ListItem/>) }
         {gamesTab==2 && <Text>Paid Games</Text> }
       </ScrollView>
     </SafeAreaView>
