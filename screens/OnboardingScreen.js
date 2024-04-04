@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
-const Main = ({ navigation }) => {
+const OnboardingScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text
@@ -40,7 +40,7 @@ const Main = ({ navigation }) => {
   );
 };
 
-export default Main;
+export default OnboardingScreen;
 
 const styles = StyleSheet.create({
   container: {
