@@ -15,7 +15,7 @@ import { windowWidth } from "../utils/Dimensions";
 import CustomSwitch from "../components/CustomSwitch";
 import ListItem from "../components/ListItem";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [gamesTab, setGamesTab] = useState(1);
   const renderBanner = ({ item, index }) => {
     return <BannerSlider data={item} />;
@@ -35,10 +35,12 @@ const Home = () => {
           }}
         >
           <Text style={{ fontSize: 14 }}>Hello Noella Promise</Text>
-          <Image
-            source={require("../assets/images/user-profile.jpg")}
-            style={{ width: 50, height: 50, borderRadius: 50 }}
-          />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Image
+              source={require("../assets/images/user-profile.jpg")}
+              style={{ width: 50, height: 50, borderRadius: 50 }}
+            />
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -100,10 +102,9 @@ const Home = () => {
               title={item.title}
               subTitle={item.subtitle}
               isFree={item.isFree}
-              
             />
           ))}
-       {gamesTab == 2 &&
+        {gamesTab == 2 &&
           paidGames.map((item) => (
             <ListItem
               key={item.id}
@@ -111,8 +112,7 @@ const Home = () => {
               title={item.title}
               subTitle={item.subtitle}
               isFree={item.isFree}
-              price ={item.price}
-              
+              price={item.price}
             />
           ))}
       </ScrollView>
