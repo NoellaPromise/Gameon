@@ -48,7 +48,7 @@ export const sliderData = [
       id: '4',
     },
     {
-    //   poster: require('../assets/images/FarCry6.png'),
+      poster: require('../assets/images/FarCry6.png'),
       title: 'Far Cry 6',
       subtitle: 'Ubisoft',
       isFree: 'No',
@@ -56,7 +56,7 @@ export const sliderData = [
       id: '5',
     },
     {
-    //   poster: require('../assets/images/god-of-war.jpeg'),
+     poster: require('../assets/images/god-of-war.jpeg'),
       title: 'God of War: Ragnarok',
       subtitle: 'Sony',
       isFree: 'No',
@@ -88,7 +88,7 @@ export const sliderData = [
       id: '3',
     },
     {
-    //   poster: require('../assets/images/fortnite.webp'),
+     poster: require('../assets/images/fortnite.webp'),
       title: 'Fortnite',
       subtitle: 'Epic Games',
       isFree: 'Yes',
@@ -105,7 +105,7 @@ export const sliderData = [
       poster: require('../assets/images/diablo-4.jpeg'),
       title: 'Diablo 4',
       subtitle: 'Blizzard Entertainment',
-      isFree: 'No',
+      isFree: 'Yes',
       id: '6',
     },
   ];

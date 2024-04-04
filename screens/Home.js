@@ -9,21 +9,21 @@ import {
 } from "react-native";
 import { EvilIcons } from "@expo/vector-icons";
 import Carousel from "react-native-snap-carousel";
-import { freeGames, sliderData } from "../model/data";
+import { freeGames, paidGames, sliderData } from "../model/data";
 import BannerSlider from "../components/BannerSlider";
 import { windowWidth } from "../utils/Dimensions";
 import CustomSwitch from "../components/CustomSwitch";
 import ListItem from "../components/ListItem";
 
 const Home = () => {
-  const[gamesTab,setGamesTab] = useState(1)
+  const [gamesTab, setGamesTab] = useState(1);
   const renderBanner = ({ item, index }) => {
     return <BannerSlider data={item} />;
   };
 
-  const onSelectionSwitch = (value) => { 
-setGamesTab(value);
-  }
+  const onSelectionSwitch = (value) => {
+    setGamesTab(value);
+  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -84,7 +84,7 @@ setGamesTab(value);
           itemWidth={300}
           loop={true}
         />
-        <View >
+        <View>
           <CustomSwitch
             SelectionMode={1}
             option1="Free to play"
@@ -92,9 +92,28 @@ setGamesTab(value);
             onSelectionSwitch={onSelectionSwitch}
           />
         </View>
-        {gamesTab==1 && 
-        freeGames.map(item=> <ListItem/>) }
-        {gamesTab==2 && <Text>Paid Games</Text> }
+        {gamesTab == 1 &&
+          freeGames.map((item) => (
+            <ListItem
+              key={item.id}
+              photo={item.poster}
+              title={item.title}
+              subTitle={item.subtitle}
+              isFree={item.isFree}
+              
+            />
+          ))}
+       {gamesTab == 2 &&
+          paidGames.map((item) => (
+            <ListItem
+              key={item.id}
+              photo={item.poster}
+              title={item.title}
+              subTitle={item.subtitle}
+              isFree={item.isFree}
+              
+            />
+          ))}
       </ScrollView>
     </SafeAreaView>
   );

@@ -2,7 +2,7 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const ListItem = () => {
+const ListItem = ({photo,title,subTitle,isFree,price}) => {
   return (
     <View
       style={{
@@ -16,7 +16,7 @@ const ListItem = () => {
     >
       <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
         <Image
-          source={require("../assets/images/FarCry6 (1).png")}
+          source={photo}
           style={{
             width: 55,
             height: 55,
@@ -26,8 +26,8 @@ const ListItem = () => {
           }}
         />
         <View>
-          <Text>Marvel</Text>
-          <Text>SPIDER-MAN</Text>
+          <Text>{subTitle}</Text>
+          <Text>{title}</Text>
         </View>
       </View>
       <TouchableOpacity
@@ -39,7 +39,8 @@ const ListItem = () => {
         }}
       >
         <Text style={{ color: "#fff", textAlign: "center", fontSize: 14 }}>
-          Play
+          {isFree == 'Yes'&& 'Play'}
+          {isFree == 'No'&& price}
         </Text>
       </TouchableOpacity>
     </View>
