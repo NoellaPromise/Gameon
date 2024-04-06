@@ -44,6 +44,7 @@ const ListItem = ({photo,title,subTitle,isFree,price}) => {
         </Text>
       </TouchableOpacity>
     </View>
+  
   );
 };
 
